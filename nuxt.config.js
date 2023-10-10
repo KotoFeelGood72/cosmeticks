@@ -29,7 +29,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '@/plugins/icons.js'},
-    { src: '@/plugins/swiper.js', mode: 'client'}
+    { src: '@/plugins/vue-js-paginate.js', mode: 'client'},
+    { src: '@/plugins/swiper.js', mode: 'client'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -44,7 +45,14 @@ export default {
   modules: [
     '@nuxt/image',
     '@nuxtjs/style-resources',
+    '@nuxtjs/axios'
   ],
+
+  axios: {
+    baseURL: 'http://localhost:3000', // Used as fallback if no runtime config is provided
+  },
+
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
@@ -56,5 +64,17 @@ export default {
         },
       },
     },
+    standalone: true,
+      extend(config, { isDev, isServer }) {
+        if (isDev && isServer) {
+          config.externals = [
+            'grpc',
+            '@firebase/app',
+            '@firebase/auth',
+            '@firebase/firestore',
+            '@firebase/storage'
+          ]
+        }
+      }
   }
 }

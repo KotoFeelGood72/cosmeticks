@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-green text-white">
+  <footer class="footer bg-green text-white mt-[190px]">
     <div class="container">
       <div class="footer_main pt-[46px] pb-[63px] flex items-start flex-wrap justify-between">
         <div>

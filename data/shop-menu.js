@@ -2,6 +2,7 @@ export const shopMenu = [
   {
     name: 'Для лица',
     link: '',
+    isActive: false,
     children: [
       {
         name: 'Очищение',
@@ -48,6 +49,7 @@ export const shopMenu = [
   {
     name: 'Для тела',
     link: '',
+    isActive: false,
     children: [
       {
         name: 'Очищение',
@@ -94,6 +96,7 @@ export const shopMenu = [
   {
     name: 'Для рук и ног',
     link: '',
+    isActive: false,
     children: [
       {
         name: 'Очищение',

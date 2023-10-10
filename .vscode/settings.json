@@ -1,6 +1,0 @@
-{
-  "nuxt.isNuxtApp": true,
-  "node.env": {
-    "NODE_OPTIONS": "--max-old-space-size=4096"
-  }
-}

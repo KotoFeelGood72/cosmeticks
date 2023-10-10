@@ -7,11 +7,12 @@
     <slider-five :data="five" title="Товары по акции" class="mb-[160px]"/>
     <sale/>
     <about/>
+    <seo-block/>
   </div>
 </template>
 
 <script>
-import { five } from '@/data/five.js'
+  import { five } from '@/data/five.js'
   export default {
     components: {
       hero: () => import('@/components/blocks/hero'),
@@ -20,6 +21,7 @@ import { five } from '@/data/five.js'
       brand: () => import('@/components/blocks/brand'),
       sale: () => import('@/components/blocks/sale'),
       about: () => import('@/components/blocks/about/about-block'),
+      seoBlock: () => import('@/components/ui/seo-block'),
     },
     data() {
       return {

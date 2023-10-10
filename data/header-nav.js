@@ -5,7 +5,7 @@ export const headerNav = [
   },
   {
     name: 'Бренды',
-    link: '/brands'
+    link: '/brand'
   },
   {
     name: 'Для лица',

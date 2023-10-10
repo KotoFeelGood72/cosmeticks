@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import shopMenu from './menu.vue';
+import shopMenu from '@/components/shop/sidebar/menu';
+
   export default {
     components: {
       shopMenu
