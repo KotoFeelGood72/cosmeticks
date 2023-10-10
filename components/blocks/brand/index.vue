@@ -2,10 +2,10 @@
   <section class="brand py-[160px]">
     <div class="container">
       <div class="brand-head">
-        <section-title title="Популярные бренды" level="h3"/>
+        <section-title title="Популярные бренды" level="h3" class="font-corm"/>
         <div class="brand-more">
           <nuxt-link to="">
-            <p>Все бренды</p>
+            <p class="font-semibold">Все бренды</p>
             <div class="brand-icon">
               <icons icon="ph:caret-right-bold" width="20" height="20"/>
             </div>
@@ -39,7 +39,40 @@
 
 .brand-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(13%, 1fr));
   width: 100%;
+  grid-gap: 30px;
+
+  li {
+    border-radius: 15px;
+    border: 1px solid rgba(44, 44, 44, 0.15);
+    @include flex-center;
+    height: 141px;
+    transition: all .3s ease;
+
+    &:hover {
+
+    }
+  }
+}
+
+.brand-head {
+  @include flex-space;
+  margin-bottom: 50px;
+
+  h3 {
+    font-size: 40px;
+  }
+}
+
+.brand-more {
+  a {
+    @include flex-start;
+    color: $orange;
+    font-size: 18px;
+    p {
+      margin-right: 10px;
+    }
+  }
 }
 </style>

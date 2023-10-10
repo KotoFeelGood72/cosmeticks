@@ -4,7 +4,9 @@
     <services />
     <slider-five :data="five" title="Популярные товары" class="pt-[100px]"/>
     <brand/>
-    <slider-five :data="five" title="Товары по акции" />
+    <slider-five :data="five" title="Товары по акции" class="mb-[160px]"/>
+    <sale/>
+    <about/>
   </div>
 </template>
 
@@ -12,10 +14,12 @@
 import { five } from '@/data/five.js'
   export default {
     components: {
-      Hero: () => import('@/components/blocks/hero'),
+      hero: () => import('@/components/blocks/hero'),
       Services: () => import('@/components/blocks/services'),
       sliderFive: () => import('@/components/blocks/slider/slider'),
       brand: () => import('@/components/blocks/brand'),
+      sale: () => import('@/components/blocks/sale'),
+      about: () => import('@/components/blocks/about/about-block'),
     },
     data() {
       return {
