@@ -26,6 +26,7 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
+    width: 100%;
     &:before {
       position: absolute;
       top: 0;

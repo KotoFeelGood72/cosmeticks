@@ -16,7 +16,7 @@
     <div class="products-content">
       <h3>{{ data.title }}</h3>
       <div class="products-bottom w-full">
-        <div class="products-price text-18 font-semibold mr-[30px]">{{ data.price }} ₽ <span v-if="data.oldprice" class="text-14 text-[#2C2C2C66] pl-[10px]">{{ data.oldprice }} ₽</span></div>
+        <div class="products-price text-18 font-semibold mr-[25px] text-[#009196]">{{ data.price }} ₽ <span v-if="data.oldprice" class="text-14 text-[#2C2C2C66] pl-[10px]">{{ data.oldprice }} ₽</span></div>
         <div class="add-to-cart">
           <button type="button">
             <icons icon="mdi-light:cart" width="20" height="20"/>

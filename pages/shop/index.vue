@@ -38,13 +38,56 @@
   import sidebar from '@/components/shop/sidebar'
   import sectionTitle from '@/components/ui/section-title';
   import cardProducts from '@/components/blocks/products/card';
-  import { five } from '@/data/five.js'
   import vPagination from '@/components/ui/pagination.vue';
 
   export default {
     data() {
       return {
-        five,
+        name: 'Каталог',
+        five: [
+          {
+            title: 'Skin Deva 100% Pure Hyaluronic Acid Сыворотка...',
+            img: '/assets/img/products/prod-1.jpg',
+            price: '20 000',
+            oldprice: '',
+            meta: 'NEW'
+          },
+          {
+            title: 'Skin Deva 100% Pure Hyaluronic Acid Сыворотка...',
+            img: '/assets/img/products/prod-2.jpg',
+            price: '20 000',
+            oldprice: '20 000',
+            meta: 'SALE'
+          },
+          {
+            title: 'Skin Deva 100% Pure Hyaluronic Acid Сыворотка...',
+            img: '/assets/img/products/prod-3.jpg',
+            price: '20 000',
+            oldprice: '',
+            meta: ''
+          },
+          {
+            title: 'Skin Deva 100% Pure Hyaluronic Acid Сыворотка...',
+            img: '/assets/img/products/prod-4.jpg',
+            price: '20 000',
+            oldprice: '',
+            meta: ''
+          },
+          {
+            title: 'Skin Deva 100% Pure Hyaluronic Acid Сыворотка...',
+            img: '/assets/img/products/prod-4.jpg',
+            price: '20 000',
+            oldprice: '',
+            meta: ''
+          },
+          {
+            title: 'Skin Deva 100% Pure Hyaluronic Acid Сыворотка...',
+            img: '/assets/img/products/prod-4.jpg',
+            price: '20 000',
+            oldprice: '',
+            meta: ''
+          }
+        ],
         sortModal: false,
         sortLabel: {
           name: 'По новизне',
@@ -55,7 +98,7 @@
           { name: 'По стоимости', slug: 'cash' },
           { name: 'По популярности', slug: 'popular'},
           { name: 'По рейтингу', slug: 'stars' }
-        ]
+        ],
       }
     },
     components: {
@@ -73,8 +116,11 @@
           name: item.name,
           slug: item.slug
         };
-        this.sortModal = false; // Закрываем выпадающий список после выбора
+        this.sortModal = false;
       },
+    },
+    mounted() {
+      this.$store.dispatch('addBreadcrumb', [{name: this.name}])
     },
   }
 </script>

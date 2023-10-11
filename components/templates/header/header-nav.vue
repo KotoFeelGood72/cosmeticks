@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="relative">
       <ul class="nav-list flex items-center justify-between flex-wrap">
-        <li v-for="(item, index) in headerNav" :key="'parent-' + index" @mouseover="menuExpandVisible(index)" @mouseleave="menuExpandVisible(null)">
+        <li v-for="(item, index) in nav" :key="'parent-' + index" @mouseover="menuExpandVisible(index)" @mouseleave="menuExpandVisible(null)">
           <nuxt-link class="text-18sm font-semibold flex items-center pb-[15px]" :to="item.link">
             <p :class="{'mr-[9px]': item.children}">{{ item.name }}</p>
             <div class="icon-submenu">
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-  import { headerNav } from '@/data/header-nav';
   import menuExpand from './menu-expand.vue';
   export default {
     components: {
@@ -27,7 +26,76 @@
     },
     data() {
       return {
-        headerNav,
+        nav: [
+          {
+            name: 'Каталог',
+            link: '/shop',
+          },
+          {
+            name: 'Бренды',
+            link: '/brand'
+          },
+          {
+            name: 'Для лица',
+            link: '/face',
+            children: [
+              { name: 'Очищение 1', link: '' },
+              { name: 'Тонизация', link: '' },
+              { name: 'Пилинги', link: '' },
+              { name: 'Сыворотки', link: '' },
+              { name: 'Кремы для лица', link: '' },
+              { name: 'Кремы для кожи вокруг глаз', link: '' },
+              { name: 'Мужская линия', link: '' },
+              { name: 'Специальные средства', link: '' },
+              { name: 'Солнцезащитные средства', link: '/' }
+            ],
+            sale: '/assets/img/menu/sale.jpg'
+          },
+          {
+            name: 'Для тела',
+            link: '/people',
+            children: [
+              { name: 'Очищение 2', link: '' },
+              { name: 'Тонизация', link: '' },
+              { name: 'Пилинги', link: '' },
+              { name: 'Сыворотки', link: '' },
+              { name: 'Кремы для лица', link: '' },
+              { name: 'Кремы для кожи вокруг глаз', link: '' },
+              { name: 'Мужская линия', link: '' },
+              { name: 'Специальные средства', link: '' },
+              { name: 'Солнцезащитные средства', link: '/' }
+            ],
+            sale: '/assets/img/menu/sale.jpg'
+          },
+          {
+            name: 'Для рук и ног',
+            link: '/arm',
+            children: [
+              { name: 'Очищение 3', link: '' },
+              { name: 'Тонизация', link: '' },
+              { name: 'Пилинги', link: '' },
+              { name: 'Сыворотки', link: '' },
+              { name: 'Кремы для лица', link: '' },
+              { name: 'Кремы для кожи вокруг глаз', link: '' },
+              { name: 'Мужская линия', link: '' },
+              { name: 'Специальные средства', link: '' },
+              { name: 'Солнцезащитные средства', link: '/' }
+            ],
+            sale: '/assets/img/menu/sale.jpg'
+          },
+          {
+            name: 'Акции',
+            link: '/sale'
+          },
+          {
+            name: 'Наборы',
+            link: '/template'
+          },
+          {
+            name: 'Миниатюры',
+            link: '/thumbnail'
+          },
+        ],
         expandedMenuIndex: null
       }
     },
