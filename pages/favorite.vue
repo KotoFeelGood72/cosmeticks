@@ -1,49 +1,62 @@
 <template>
-  <div class="shop">
+  <section class="favorite">
     <div class="container">
-      <div class="shop_main">
-        <sidebar/>
-        <div class="shop-content">
-          <section-title title="Каталог" class="font-corm font-medium text-40 mb-[35px]"/>
-          <div class="shop_content__head">
-            <div class="shop__count">Найдено товаров: 6</div>
-            <div class="shop-sortering">
-              <div class="btn-sortering mr-[20px]">
-                <img src="~/assets/icons/arrow-sortering.svg" alt="">
+      <div class="favorite_main">
+        <div class="favorite__title mb-[50px]">
+          <section-title :title="name" class="font-corm leading-10 text-40"/>
+          <button class="favorite__remove" type="button" @click="removeItemFavorite">Очистить</button>
+        </div>
+        <div class="favorite__head mb-[50px]">
+          <input-search class="max-w-[375px]"/>
+          <div class="shop-sortering">
+            <div class="btn-sortering mr-[20px]">
+              <img src="~/assets/icons/arrow-sortering.svg" alt="">
+            </div>
+            <div class="select-sort">
+              <div @click="sortHandler">
+                <p :data-selected="sortLabel.slug">{{ sortLabel.name }}</p>
+                <icons icon="ph:caret-down-bold" color="#FF6A28" width="20" height="20"/>
               </div>
-              <div class="select-sort">
-                <div @click="sortHandler">
-                  <p :data-selected="sortLabel.slug">{{ sortLabel.name }}</p>
-                  <icons icon="ph:caret-down-bold" color="#FF6A28" width="20" height="20"/>
-                </div>
-                <ul v-if="sortModal">
-                  <li ref="optionSelect" v-for="item in sortList" :key="item.slug" :data-options="item.slug" @click="selectItem(item)">{{ item.name }}</li>
-                </ul>
-              </div>
+              <ul v-if="sortModal">
+                <li ref="optionSelect" v-for="item in sortList" :key="item.slug" :data-options="item.slug" @click="selectItem(item)">{{ item.name }}</li>
+              </ul>
             </div>
           </div>
-          <ul class="grid-4 mb-[60px]">
+        </div>
+        <ul class="grid-5 mb-[60px]">
             <li v-for="(item, i) in five" :key="'products' + i">
               <card-products :data="item"/>
             </li>
           </ul>
-          <v-pagination/>
-        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-  import sidebar from '@/components/shop/sidebar/sidebar'
-  import sectionTitle from '@/components/ui/section-title';
-  import cardProducts from '@/components/blocks/products/card';
-  import vPagination from '@/components/ui/pagination.vue';
-
+import sectionTitle from '../components/ui/section-title.vue'
+import inputSearch from '../components/ui/input/input-search.vue';
+import cardProducts from '@/components/blocks/products/card';
   export default {
+    components: {
+      sectionTitle,
+      inputSearch,
+      cardProducts
+    },
     data() {
       return {
-        name: 'Каталог',
+        name: 'Избранное',
+        sortModal: false,
+        sortLabel: {
+          name: 'По новизне',
+          slug: 'new'
+        },
+        sortList: [
+          { name: 'По новизне', slug: 'new' },
+          { name: 'По стоимости', slug: 'cash' },
+          { name: 'По популярности', slug: 'popular'},
+          { name: 'По рейтингу', slug: 'stars' }
+        ],
         five: [
           {
             title: 'Skin Deva 100% Pure Hyaluronic Acid Сыворотка...',
@@ -88,26 +101,12 @@
             meta: ''
           }
         ],
-        sortModal: false,
-        sortLabel: {
-          name: 'По новизне',
-          slug: 'new'
-        },
-        sortList: [
-          { name: 'По новизне', slug: 'new' },
-          { name: 'По стоимости', slug: 'cash' },
-          { name: 'По популярности', slug: 'popular'},
-          { name: 'По рейтингу', slug: 'stars' }
-        ],
       }
     },
-    components: {
-      sidebar,
-      sectionTitle,
-      cardProducts,
-      vPagination,
-    },
     methods: {
+      removeItemFavorite() {
+        console.log('Remove favite list')
+      },
       sortHandler() {
         this.sortModal = !this.sortModal
       },
@@ -118,35 +117,12 @@
         };
         this.sortModal = false;
       },
-    },
-    // mounted() {
-    //   this.$store.dispatch('addBreadcrumb', [{name: this.name}])
-    // },
+    }
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 
-
-
-.shop_main {
-  @include flex-start;
-  flex-wrap: wrap;
-  margin: -69px -69px 0 0;
-  align-items: flex-start;
-  &>div {
-    padding: 69px 69px 0 0;
-  }
-}
-
-.shop-content {
-  flex-grow: 1;
-}
-
-.shop_content__head {
-  @include flex-space;
-  margin-bottom: 25px;
-}
 
 .select-sort {
   position: relative;
@@ -196,4 +172,27 @@
 .shop-sortering {
   @include flex-start;
 }
+
+.favorite__head {
+  @include flex-space;
+}
+
+.favorite__title {
+  @include flex-start;
+  align-items: flex-end;
+
+  h1 {
+    margin-right: 15px;
+  }
+  button {
+    outline: none;
+    color: $pink;
+    transition: all .3s ease;
+    font-weight: 400;
+    &:hover {
+      color: $grey;
+    }
+  }
+}
+
 </style>

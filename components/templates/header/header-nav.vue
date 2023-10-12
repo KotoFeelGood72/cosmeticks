@@ -89,7 +89,7 @@
           },
           {
             name: 'Наборы',
-            link: '/template'
+            link: '/nabor'
           },
           {
             name: 'Миниатюры',

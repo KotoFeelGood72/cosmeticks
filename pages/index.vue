@@ -12,15 +12,22 @@
 </template>
 
 <script>
+import hero from '../components/blocks/hero.vue'
+import services from '../components/blocks/services/services.vue'
+import sliderFive from '../components/blocks/slider/slider.vue'
+import brand from '../components/blocks/brand/brand.vue'
+import sale from '../components/blocks/sale/sale.vue'
+import about from '../components/blocks/about/about-block.vue'
+import seoBlock from '../components/ui/seo-block.vue'
   export default {
     components: {
-      hero: () => import('@/components/blocks/hero'),
-      Services: () => import('@/components/blocks/services'),
-      sliderFive: () => import('@/components/blocks/slider/slider'),
-      brand: () => import('@/components/blocks/brand'),
-      sale: () => import('@/components/blocks/sale'),
-      about: () => import('@/components/blocks/about/about-block'),
-      seoBlock: () => import('@/components/ui/seo-block'),
+      hero,
+      services,
+      sliderFive,
+      brand,
+      sale,
+      about,
+      seoBlock,
     },
     data() {
       return {

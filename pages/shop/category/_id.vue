@@ -4,7 +4,7 @@
       <div class="shop_main">
         <sidebar/>
         <div class="shop-content">
-          <section-title title="Каталог" class="font-corm font-medium text-40 mb-[35px]"/>
+          <section-title :title="this.$route.fullPath" class="font-corm font-medium text-40 mb-[35px]"/>
           <div class="shop_content__head">
             <div class="shop__count">Найдено товаров: 6</div>
             <div class="shop-sortering">

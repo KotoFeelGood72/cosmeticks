@@ -2,7 +2,7 @@
   <section class="delivery">
     <div class="container">
       <div class="delivery_main">
-        <section-title :title="name" class="font-corm text-40 font-medium mb-[50px]"/>
+        <section-title v-if="name" :title="name" class="font-corm text-40 font-medium mb-[50px]"/>
         <div class="txt_block__w">
           <div class="txt-block">
             <h3>Доставка</h3>
@@ -33,17 +33,17 @@
 <script>
   import sectionTitle from '@/components/ui/section-title.vue'
   export default {
-    components: {
-      sectionTitle
-    },
     data() {
       return {
         name: 'Доставка и оплата',
       }
     },
-    mounted() {
-      this.$store.dispatch('addBreadcrumb', [{name: this.name}])
+    components: {
+      sectionTitle
     },
+    // mounted() {
+    //   this.$store.dispatch('addBreadcrumb', [{name: this.name}])
+    // },
   }
 </script>
 

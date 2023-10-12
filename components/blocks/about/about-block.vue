@@ -25,8 +25,8 @@
 </template>
 
 <script>
-  import sectionTitle from '../../ui/section-title.vue';
-  import dBtn from '../../ui/button/d-btn.vue';
+  import sectionTitle from '@/components/ui/section-title.vue';
+  import dBtn from '@/components/ui/button/d-btn.vue';
   export default {
     components: {
       sectionTitle,

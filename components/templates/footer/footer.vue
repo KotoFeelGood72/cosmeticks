@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer bg-green text-white mt-[190px]">
+  <footer class="footer bg-green text-white">
     <div class="container">
       <div class="footer_main pt-[46px] pb-[63px] flex items-start flex-wrap justify-between">
         <div>
@@ -8,12 +8,12 @@
             <p class="mb-[61px] font-thin opacity-7">Быстрая доставка по всей России: Москва, Санкт-Петербург, Новосибирск, Екатеринбург, Казань, Нижний Новгород, Челябинск, Самара, Омск, Ростов-на-Дону и в другие города.</p>
             <ul>
               <li v-for="item in 2" :key="'phone-' + item">
-                <nuxt-link to="/">
+                <a href="">
                   <div class="phone-icon">
                     <icons icon="ic:round-local-phone" width="15" height="15"/>
                   </div>
                   <p>+7 000 000 00 00</p>
-                </nuxt-link>
+                </a>
               </li>
             </ul>
           </div>
@@ -77,31 +77,31 @@
           },
           {
             name: 'Бренды',
-            link: '',
+            link: '/brand',
           },
           {
             name: 'Для лица',
-            link: '',
+            link: '/face',
           },
           {
             name: 'Для тела',
-            link: '',
+            link: '/skin-people',
           },
           {
             name: 'Для рук и ног',
-            link: '',
+            link: '/skin',
           },
           {
             name: 'Акции',
-            link: '',
+            link: '/sale',
           },
           {
             name: 'Наборы',
-            link: '',
+            link: '/nabor',
           },
           {
             name: 'Миниатюры',
-            link: '',
+            link: '/mini',
           },
         ],
         company: [
@@ -118,7 +118,7 @@
           },
           {
             name: 'Контакты',
-            link: ''
+            link: '/contacts'
           },
         ],
         socials: [

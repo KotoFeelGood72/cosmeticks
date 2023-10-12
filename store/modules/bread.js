@@ -1,7 +1,7 @@
 export default {
-  state: {
+  state: () => ({
     breadcrumb: [],
-  },
+  }),
   mutations: {
     set(state, value) {
       state.breadcrumb = value;
@@ -18,4 +18,3 @@ export default {
     },
   }
 }
-

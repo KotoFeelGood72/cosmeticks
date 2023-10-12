@@ -57,3 +57,16 @@
 		}
 	}
 }
+
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
+  grid-gap: 30px;
+}
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+  grid-gap: 30px;
+}
