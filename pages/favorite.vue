@@ -117,7 +117,10 @@ import cardProducts from '@/components/blocks/products/card';
         };
         this.sortModal = false;
       },
-    }
+    },
+    mounted() {
+      this.$store.dispatch('addBreadcrumb', [{name: this.name}])
+    },
   }
 </script>
 

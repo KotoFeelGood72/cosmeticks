@@ -59,21 +59,6 @@
     components: {
       dBtn: () => import('@/components/ui/button/d-btn')
     },
-    methods: {
-      initSlider() {
-        new this.$swiper('.hero-slider', {
-          speed: 400,
-          spaceBetween: 20,
-          navigation: {
-            nextEl: '.slider-next',
-            prevEl: '.slider-prev',
-          }
-        })
-      }
-    },
-    mounted() {
-      this.initSlider();
-    }
   }
 </script>
 

@@ -74,11 +74,9 @@
         ]
       }
     },
-    // mounted() {
-    //   if(this.name) {
-    //     this.$store.dispatch('addBreadcrumb', [{name: this.name}])
-    //   }
-    // },
+    mounted() {
+      this.$store.dispatch('addBreadcrumb', [{name: this.name}])
+    },
   }
 </script>
 

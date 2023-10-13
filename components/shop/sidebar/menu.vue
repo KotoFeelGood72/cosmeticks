@@ -9,7 +9,7 @@
         <transition name="translate">
           <ul v-if="item.children && item.isActive">
             <li v-for="(child, i) in item.children" :key="'menu-' + i">
-              <nuxt-link :to="child.link">{{ child.name }}</nuxt-link>
+              <nuxt-link :to="'/shop/category' + child.link">{{ child.name }}</nuxt-link>
             </li>
           </ul>
         </transition>
@@ -25,48 +25,48 @@
         menu: [
           {
             name: 'Для лица',
-            link: '',
+            link: '/face',
             isActive: false,
             children: [
               {
                 name: 'Очищение',
-                link: '',
+                link: '/cleansing',
               },
               {
                 name: 'Тонизация',
-                link: '',
+                link: '/tonification',
               },
               {
                 name: 'Пилинги',
-                link: '',
+                link: '/peels',
               },
               {
                 name: 'Маски',
-                link: '',
+                link: '/masks',
               },
               {
                 name: 'Сыворотки',
-                link: '',
+                link: '/serums',
               },
               {
                 name: 'Кремы для лица',
-                link: '',
+                link: '/face-creams',
               },
               {
                 name: 'Кремы для кожи вокруг глаз',
-                link: '',
+                link: '/creams-for-the-skin',
               },
               {
                 name: 'Мужская линия',
-                link: '',
+                link: '/mens-line',
               },
               {
                 name: 'Специальные средства',
-                link: '',
+                link: '/special-tools',
               },
               {
                 name: 'Солнцезащитные средства',
-                link: '',
+                link: '/sunscreens',
               },
             ]
           },
@@ -77,43 +77,43 @@
             children: [
               {
                 name: 'Очищение',
-                link: '',
+                link: '/cleansing',
               },
               {
                 name: 'Тонизация',
-                link: '',
+                link: '/tonification',
               },
               {
                 name: 'Пилинги',
-                link: '',
+                link: '/peels',
               },
               {
                 name: 'Маски',
-                link: '',
+                link: '/masks',
               },
               {
                 name: 'Сыворотки',
-                link: '',
+                link: '/serums',
               },
               {
                 name: 'Кремы для лица',
-                link: '',
+                link: '/face-creams',
               },
               {
                 name: 'Кремы для кожи вокруг глаз',
-                link: '',
+                link: '/creams-for-the-skin',
               },
               {
                 name: 'Мужская линия',
-                link: '',
+                link: '/mens-line',
               },
               {
                 name: 'Специальные средства',
-                link: '',
+                link: '/special-tools',
               },
               {
                 name: 'Солнцезащитные средства',
-                link: '',
+                link: '/sunscreens',
               },
             ]
           },
@@ -124,53 +124,53 @@
             children: [
               {
                 name: 'Очищение',
-                link: '',
+                link: '/cleansing',
               },
               {
                 name: 'Тонизация',
-                link: '',
+                link: '/tonification',
               },
               {
                 name: 'Пилинги',
-                link: '',
+                link: '/peels',
               },
               {
                 name: 'Маски',
-                link: '',
+                link: '/masks',
               },
               {
                 name: 'Сыворотки',
-                link: '',
+                link: '/serums',
               },
               {
                 name: 'Кремы для лица',
-                link: '',
+                link: '/face-creams',
               },
               {
                 name: 'Кремы для кожи вокруг глаз',
-                link: '',
+                link: '/creams-for-the-skin',
               },
               {
                 name: 'Мужская линия',
-                link: '',
+                link: '/mens-line',
               },
               {
                 name: 'Специальные средства',
-                link: '',
+                link: '/special-tools',
               },
               {
                 name: 'Солнцезащитные средства',
-                link: '',
+                link: '/sunscreens',
               },
             ]
           },
           {
             name: 'Наборы',
-            link: '',
+            link: '/sets',
           },
           {
             name: 'Миниатюры',
-            link: '',
+            link: '/miniatures',
           }
         ]
       }
@@ -240,6 +240,11 @@ a {
 
 .active {
   color: $orange;
+}
+
+.nuxt-link-exact-active.nuxt-link-active {
+  color: $orange;
+  font-weight: 500;
 }
 
 

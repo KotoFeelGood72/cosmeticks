@@ -2,9 +2,9 @@
   <div class="home">
     <hero/>
     <services />
-    <slider-five :data="five" title="Популярные товары" class="pt-[100px]"/>
+    <slider-five :data="five" title="Популярные товары" class="pt-[100px]" :next="sliders.slideNextPopular" :prev="sliders.slidePrevPopular"/>
     <brand/>
-    <slider-five :data="five" title="Товары по акции" class="mb-[160px]"/>
+    <slider-five :data="five" title="Товары по акции" class="mb-[160px]" :next="sliders.slideNextSale" :prev="sliders.slidePrevSale"/>
     <sale/>
     <about/>
     <seo-block/>
@@ -75,6 +75,13 @@ import seoBlock from '../components/ui/seo-block.vue'
             meta: ''
           }
         ],
+        
+        sliders: {
+          slideNextPopular: 'popular-next',
+          slidePrevPopular: 'popular-prev',
+          slideNextSale: 'sale-next',
+          slidePrevSale: 'sale-prev',
+        }
       }
     }
   }

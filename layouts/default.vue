@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <Header/>
-    <!-- <Breadcrumb v-if="getPage !== '/'"/> -->
+    <Breadcrumb v-if="getPage !== '/'"/>
     <nuxt/>
     <Form class="mt-[160px]" v-if="showForm"/>
     <Footer :class="{'mt-[190px]': !showForm, 'mt-[30px]': showForm}"/>

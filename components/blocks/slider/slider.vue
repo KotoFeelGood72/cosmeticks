@@ -6,27 +6,27 @@
           <section-title level="h2" :title="title" class="text-40 font-corm font-medium"/>
         </div>
         <div class="five-navigation">
-          <div class="five-prev" @click="swiperPrev">
+          <div class="five-prev" :class="prev">
             <button type="button">
               <icons icon="ph:caret-left-bold" width="20" height="20"/>
             </button>
           </div>
-          <div class="five-next" @click="swiperNext">
+          <div class="five-next" :class="next">
             <button type="button">
               <icons icon="ph:caret-right-bold" width="20" height="20"/>
             </button>
           </div>
         </div>
       </div>
-      <div class="five-sliders swiper-container" ref="swiperContainer">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(item, i) in data" :key="'slider-' + i">
+      <swiper class="five-sliders swiper-container" ref="sliderAll" :options="sliderOptions">
+        <!-- <div class="swiper-wrapper"> -->
+          <swiper-slide class="swiper-slide" v-for="(item, i) in data" :key="'slider-' + i">
             <div class="five-slide">
               <card-products :data="item"/>
             </div>
-          </div>
-        </div>
-      </div>
+          </swiper-slide>
+        <!-- </div> -->
+      </swiper>
     </div>
   </section>
 </template>
@@ -35,20 +35,24 @@
 import sectionTitle from '@/components/ui/section-title';
 import cardProducts from '@/components/blocks/products/card';
 
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+
 export default {
   components: {
     sectionTitle,
-    cardProducts
+    cardProducts,
+    Swiper,
+    SwiperSlide
   },
-  props: ['data', 'title'],
+  props: ['data', 'title', 'next', 'prev'],
   data() {
     return {
-      swiper: null
-    };
-  },
-  methods: {
-    initSlider() {
-      this.swiper = new this.$swiper(this.$refs.swiperContainer, {
+      sliderOptions: {
+        navigation: {
+          nextEl: '.' + this.next,
+          prevEl: '.' + this.prev,
+        },
         speed: 400,
         spaceBetween: 20,
         breakpoints: {
@@ -73,22 +77,9 @@ export default {
             slidesPerView: 5,
           },
         },
-      });
-    },
-    swiperPrev() {
-      if (this.swiper) {
-        this.swiper.slidePrev();
       }
-    },
-    swiperNext() {
-      if (this.swiper) {
-        this.swiper.slideNext();
-      }
-    }
+    };
   },
-  mounted() {
-    this.initSlider();
-  }
 };
 </script>
 
